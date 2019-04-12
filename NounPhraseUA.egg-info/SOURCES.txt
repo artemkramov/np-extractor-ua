@@ -1,6 +1,0 @@
-README.md
-setup.py
-NounPhraseUA.egg-info/PKG-INFO
-NounPhraseUA.egg-info/SOURCES.txt
-NounPhraseUA.egg-info/dependency_links.txt
-NounPhraseUA.egg-info/top_level.txt

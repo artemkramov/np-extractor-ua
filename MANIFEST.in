@@ -1,0 +1,2 @@
+include noun_phrase_ua/gazetteers/*
+include noun_phrase_ua/ukrainian-iu-ud-2.3-181115.udpipe
