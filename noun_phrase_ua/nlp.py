@@ -143,15 +143,19 @@ class NLP:
         return gazetteer_entities
 
     # Extract all named entities and nouns/pronouns from text
-    def extract_entities(self, text, ner=None):
+    def extract_entities(self, text, ner=None, text_format='default'):
         tokens = []
         tagged_words = []
 
-        # Apply gazetteer for the text and tokenize text
-        gazetteer_entities = self.preprocess_text_with_gazetteer(text)
+        if text_format == 'default':
+            # Apply gazetteer for the text and tokenize text
+            gazetteer_entities = self.preprocess_text_with_gazetteer(text)
 
-        # Parse text with UD
-        sentences = self.ud_model.tokenize(text)
+            # Parse text with UD
+            sentences = self.ud_model.tokenize(text)
+        else:
+            gazetteer_entities = []
+            sentences = self.ud_model.read(text, text_format)
 
         for s in sentences:
             self.ud_model.tag(s)
